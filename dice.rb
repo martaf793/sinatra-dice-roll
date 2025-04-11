@@ -28,20 +28,28 @@ get("/giraffe") do
 end
 
 get("/dice/2/6") do
-  n1=rand(1..6)
-  n2=rand(1..6)
-  sum=n1+n2
-  @outcome="You got #{n1} and #{n2}, adding #{sum}"
+  @rolls=[]
+  2.times do 
+    n1=rand(1..6)
+    @rolls.push(n1)
+  end
+  # n1=rand(1..6)
+  # n2=rand(1..6)
+  sum=@rolls.sum
+  @outcome="You got #{@rolls}, adding #{sum}"
   # "<h1>2d6</h1>
   # <p>#{outcome}</p>"
   erb(:two_six)
 end
 
 get("/dice/2/10") do
-    n1=rand(1..10)
-    n2=rand(1..10)
-    sum=n1+n2
-    @outcome="You got #{n1} and #{n2}, adding #{sum}"
+    @rolls=[]
+    2.times do 
+      n1=rand(1..10)
+      @rolls.push(n1)
+    end
+    sum=@rolls.sum
+    @outcome="You got #{@rolls}, adding #{sum}"
     # "<h1>2d10</h1>
     # <p>#{outcome}<p/>"
     erb(:two_ten)

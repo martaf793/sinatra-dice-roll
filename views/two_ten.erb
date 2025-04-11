@@ -1,4 +1,11 @@
 <!--  I don't need any HTML code here
 -->
      <h1>2d10</h1>
+     <ul>
+          <% @rolls.each do |jugada| %>
+          <li>
+          <%= jugada %>
+          </li>
+          <% end%>
+     </ul>
      <p><%= @outcome%><p/>
