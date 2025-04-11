@@ -34,7 +34,7 @@ get("/dice/2/6") do
   @outcome="You got #{n1} and #{n2}, adding #{sum}"
   # "<h1>2d6</h1>
   # <p>#{outcome}</p>"
-  erb(:two_six, {:layout => :wrapper})
+  erb(:two_six)
 end
 
 get("/dice/2/10") do
@@ -44,15 +44,15 @@ get("/dice/2/10") do
     @outcome="You got #{n1} and #{n2}, adding #{sum}"
     # "<h1>2d10</h1>
     # <p>#{outcome}<p/>"
-    erb(:two_ten, {:layout => :wrapper})
+    erb(:two_ten)
 end
 
 get("/dice/1/20") do
-  n1=rand(1..20)
-  @outcome="You got #{n1}"
+  @die=rand(1..20)
+  @outcome="You got #{@die}"
   # "<h1>1d20</h1
   # <p>#{outcome}</p>"
-  erb(:one_twenty, {:layout => :wrapper})
+  erb(:one_twenty)
 end
 
 get("/dice/5/4") do
@@ -65,5 +65,16 @@ get("/dice/5/4") do
   @outcome="You got #{n1}, #{n2}, #{n3}, #{n4} and #{n5}, adding #{sum}"
 # "<h1>5d4</h1>
 # <p>#{outcome}</p1>"
-  erb(:five_four, {:layout => :wrapper})
+  erb(:five_four)
+end
+
+get("/dice/100/6") do
+  @rolls=[]
+  100.times do 
+    n1=rand(1..6)
+    @rolls.push(n1)
+  end
+  sum=@rolls.sum
+  @outcome="You got #{@rolls}, adding #{sum}"
+  erb(:one_hundred_six)
 end
