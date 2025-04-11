@@ -64,13 +64,13 @@ get("/dice/1/20") do
 end
 
 get("/dice/5/4") do
-  n1=rand(1..4)
-  n2=rand(1..4)
-  n3=rand(1..4)
-  n4=rand(1..4)
-  n5=rand(1..4)
-  sum=n1+n2+n3+n4+n5
-  @outcome="You got #{n1}, #{n2}, #{n3}, #{n4} and #{n5}, adding #{sum}"
+  @rolls=[]
+  5.times do
+    n1=rand(1..4)
+    @rolls.push(n1)
+  end
+  # sum=n1+n2+n3+n4+n5
+  # @outcome="You got #{n1}, #{n2}, #{n3}, #{n4} and #{n5}, adding #{sum}"
 # "<h1>5d4</h1>
 # <p>#{outcome}</p1>"
   erb(:five_four)
