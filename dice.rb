@@ -34,7 +34,7 @@ get("/dice/2/6") do
   @outcome="You got #{n1} and #{n2}, adding #{sum}"
   # "<h1>2d6</h1>
   # <p>#{outcome}</p>"
-  erb(:two_six)
+  erb(:two_six, {:layout => :wrapper})
 end
 
 get("/dice/2/10") do
@@ -44,7 +44,7 @@ get("/dice/2/10") do
     @outcome="You got #{n1} and #{n2}, adding #{sum}"
     # "<h1>2d10</h1>
     # <p>#{outcome}<p/>"
-    erb(:two_ten)
+    erb(:two_ten, {:layout => :wrapper})
 end
 
 get("/dice/1/20") do
@@ -52,7 +52,7 @@ get("/dice/1/20") do
   @outcome="You got #{n1}"
   # "<h1>1d20</h1
   # <p>#{outcome}</p>"
-  erb(:one_twenty)
+  erb(:one_twenty, {:layout => :wrapper})
 end
 
 get("/dice/5/4") do
@@ -65,5 +65,5 @@ get("/dice/5/4") do
   @outcome="You got #{n1}, #{n2}, #{n3}, #{n4} and #{n5}, adding #{sum}"
 # "<h1>5d4</h1>
 # <p>#{outcome}</p1>"
-  erb(:five_four)
+  erb(:five_four, {:layout => :wrapper})
 end
