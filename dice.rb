@@ -10,7 +10,7 @@ BetterErrors::Middleware.allow_ip!('0.0.0.0/0.0.0.0')
 get("/") do
   "<h1>Let's play</h1>
   <ul>
-    <li><a href="https://turbo-computing-machine-r4j4ppvpv9q25jq-4567.app.github.dev/dice/2/6" target="_blank">"Roll two 6-sided dice"</a></li>
+    <li><a href=\"https://turbo-computing-machine-r4j4ppvpv9q25jq-4567.app.github.dev/dice/2/6\" target=\"_blank\">Roll two 6-sided dice</a></li>
     <li><a href=\"/dice/2/10\">Roll two 10-sided dice</a></li>
   <li><a href=\"/dice/1/20\">Roll one 20-sided dice</a></li>
   <li><a href=\"/dice/5/4\">Roll five 4-sided dice</a></li>
